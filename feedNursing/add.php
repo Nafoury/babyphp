@@ -5,11 +5,11 @@ include "../connect.php";
 $leftD= filterRequest("left_duration");
 $date= filterRequest("date");
 $side=   filterRequest("nursing_side");
-$startN=filterRequest("starting_breast");
+$startN=filterRequest("starting_side");
 $rightD=filterRequest("right_duration");
 $babyId= filterRequest("baby_id");
 
-$stmt = $con->prepare("INSERT INTO `feed_nursing` (`left_duration`, `date`, `nursing_side`, `starting_breast`,`right_duration`,`baby_id`) VALUES (?, ?, ?, ?,?,?)");
+$stmt = $con->prepare("INSERT INTO `feed_nursing1` (`left_duration`, `date`, `nursing_side`, `starting_side`,`right_duration`,`baby_id`) VALUES (?, ?, ?, ?,?,?)");
 
 $stmt->execute(array($leftD,$date,$side,$startN,$rightD,$babyId));
 

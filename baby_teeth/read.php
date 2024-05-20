@@ -4,7 +4,7 @@ include "../connect.php";
 
 $babyId= filterRequest("baby_id");
 
-$stmt = $con->prepare("SELECT * FROM feed_nursing1 WHERE baby_id=?");
+$stmt = $con->prepare("SELECT * FROM baby_teeth WHERE baby_id=?");
 
 $stmt->execute(array($babyId));
 

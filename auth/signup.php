@@ -4,11 +4,12 @@ include "../connect.php";
 
 $email= filterRequest("email");
 $firstname= filterRequest("first_name");
-$pass= filterRequest("password");
+$password= filterRequest("password");
 
-$stmt=$con->prepare("INSERT INTO `user_authorization`(`first_name`,`email`, `password`) VALUES (?,?,?)");
 
-$stmt->execute(array($firstname,$email,$pass));
+$stmt=$con->prepare("INSERT INTO `user_authorization`(`first_name`,`email`,`password`) VALUES (?,?,?)");
+
+$stmt->execute(array($firstname,$email,$password));
 
 $count=$stmt->rowCount();
 

@@ -7,7 +7,7 @@ $status= filterRequest("status");
 $note=   filterRequest("note");
 $babyId= filterRequest("baby_id");
 
-$stmt = $con->prepare("INSERT INTO `diaper_changed` (`start_date`, `status`, `note`, `baby_id`) VALUES (?, ?, ?, ?)");
+$stmt = $con->prepare("INSERT INTO `diaper_changed` (`start_date`, `status`, `note`, `baby_id`) VALUES (?, ?, ?, ?) ");
 
 $stmt->execute(array($date,$status,$note,$babyId));
 
@@ -20,6 +20,5 @@ if($count>0){
 }else{
       echo json_encode(array("status"=>"failed"));
 }
-
 
 ?>

@@ -2,12 +2,12 @@
 
 include "../connect.php";
 
-$babyId= filterRequest("baby_id");
+$babyId=filterRequest("baby_id");
 
-$stmt = $con->prepare("SELECT * FROM feed_nursing1 WHERE baby_id=?");
+
+$stmt=$con->prepare("SELECT * FROM baby_head WHERE baby_id=?");
 
 $stmt->execute(array($babyId));
-
 $data=$stmt ->fetchAll(PDO::FETCH_ASSOC);
 $count=$stmt->rowCount();
 

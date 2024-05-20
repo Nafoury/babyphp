@@ -2,9 +2,9 @@
 
 include "../connect.php";
 
-$babyId= filterRequest("baby_id");
+$babyId= filterRequest("id");
 
-$stmt = $con->prepare("SELECT * FROM feed_nursing1 WHERE baby_id=?");
+$stmt = $con->prepare("SELECT image From user_authorization WHERE id=?");
 
 $stmt->execute(array($babyId));
 

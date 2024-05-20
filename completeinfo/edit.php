@@ -2,17 +2,18 @@
 
 include "../connect.php";
 
-$infoid = filterRequest("id");
+$infoid = filterRequest("info_id");
 $babyname= filterRequest("baby_name");
 $gender=   filterRequest("gender");
 $date_of_birth= filterRequest("date_of_birth");
 $baby_weight= filterRequest("baby_weight");
 $baby_height= filterRequest("baby_height");
+$baby_head= filterRequest("baby_head");
 
 $stmt=$con->prepare("UPDATE `complete_info` SET
- `baby_name`=?,`gender`=?,`date_of_birth`=?,`baby_weight`=?,`baby_height`=? WHERE info_id=?");
+ `baby_name`=?,`gender`=?,`date_of_birth`=?,`baby_weight`=?,`baby_height`=?,`baby_head`=? WHERE info_id=?");
 
-$stmt->execute(array($babyname,$gender,$date_of_birth,$baby_weight,$baby_height,$infoid));
+$stmt->execute(array($babyname,$gender,$date_of_birth,$baby_weight,$baby_height,$baby_head,$infoid));
 
 $count=$stmt->rowCount();
 
